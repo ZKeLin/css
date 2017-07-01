@@ -1,0 +1,28 @@
+## 外边距的合并
+  又叫做外边距塌陷：块的顶部外边距和底部外边距折叠为单个外边距，其大小是组合到其中的最大外边距。
+
+### 发生外边距塌陷的三种情况：
+### 1. 相邻的兄弟姐妹元素
+		
+   相邻的两个兄弟元素之间的外边距会塌陷，除非（后面那个兄弟姐妹元素需要清除浮动）
+	
+>  <div style="margin-bottom:30px"\>下边距30px</div\>   
+>  <div style="margin-top:20px"\>上边距20px</div\>
+
+   两个块级元素之间的距离为30px，取其大值
+
+### 2. 块级父元素和他的第一个子元素或最后一个子元素
+
+   如果块级父元素中，不存在上边框、上内补、inline content、 清除浮动 这四条属性（对于上边框和上内补，也可以说，当上边距及上内补宽度为0时），那么这个块级元素和其第一个子元素的上边距就可以说”挨到了一起“。此时这个块级父元素和其第一个子元素就会发生 上外边距合并 现象，换句话说，此时这个父元素对外展现出来的外边距将直接变成这个父元素和其第一个子元素的margin-top的较大者。
+ 
+   类似的，若块级父元素的 margin-bottom 与它的最后一个子元素的margin-bottom 之间没有父元素的 border、padding、inline content、height、min-height、 max-height 分隔时，就会发生 下外边距合并 现象
+
+### 3.空元素
+   
+   如果存在一个空的块级元素，其 border、padding、inline content、height、min-height 都不存在。那么此时它的上下边距中间将没有任何阻隔，此时它的上下外边距将会合并
+> <p style="margin-bottom: 0px;"\>这个段落的和下面段落的距离将为20px</p\>
+
+> <div style="margin-top: 20px; margin-bottom: 20px;"\></div\>
+
+> <p style="margin-top: 0px;"\>这个段落的和上面段落的距离将为20px</p\>
+
