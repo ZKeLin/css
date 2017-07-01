@@ -6,8 +6,8 @@
 		
    相邻的两个兄弟元素之间的外边距会塌陷，除非（后面那个兄弟姐妹元素需要清除浮动）
 	
->  `<div style="margin-bottom:30px">下边距30px</div> `  
->  `<div style="margin-top:20px">上边距20px</div>`
+>  <div style="margin-bottom:30px"\>下边距30px</div\>   
+>  <div style="margin-top:20px"\>上边距20px</div\>
 
    两个块级元素之间的距离为30px，取其大值
 
@@ -20,9 +20,9 @@
 ### 3.空元素
    
    如果存在一个空的块级元素，其 border、padding、inline content、height、min-height 都不存在。那么此时它的上下边距中间将没有任何阻隔，此时它的上下外边距将会合并
-> `<p style="margin-bottom: 0px;">这个段落的和下面段落的距离将为20px</p>`
+> <p style="margin-bottom: 0px;"\>这个段落的和下面段落的距离将为20px</p\>
 
-> `<div style="margin-top: 20px; margin-bottom: 20px;"></div>`
+> <div style="margin-top: 20px; margin-bottom: 20px;"\></div\>
 
-> `<p style="margin-top: 0px;">这个段落的和上面段落的距离将为20px</p>`
+> <p style="margin-top: 0px;"\>这个段落的和上面段落的距离将为20px</p\>
 
